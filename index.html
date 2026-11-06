@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Project page for Map2SLAM: From Streaming Map Prediction to Real-Time SLAM.">
   <meta name="theme-color" content="#ffffff">
+  <link rel="preload" as="image" href="assets/images/teaser_v2.webp" type="image/webp" fetchpriority="high">
   <title>Map2SLAM: From Streaming Map Prediction to Real-Time SLAM</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M12%2050V14L32%2034L52%2014V50%22%20fill%3D%22none%22%20stroke%3D%22%23111318%22%20stroke-width%3D%224.5%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M6%2044h12v12H6zM6%208h12v12H6zM26%2028h12v12H26zM46%208h12v12H46zM46%2044h12v12H46z%22%20fill%3D%22%23002fa7%22%2F%3E%3C%2Fsvg%3E">
   <link rel="stylesheet" href="styles.css?v=11f849126fb4">
@@ -63,7 +64,10 @@
       <div class="hero-overview">
         <p class="hero-statement"><span class="tldr-label">TL;DR</span> Map2SLAM uses a frozen streaming 3D foundation model as a <strong>geometry engine</strong>, scheduling its causal and bidirectional inference to maintain a <strong>persistent, revisable SLAM state</strong>.</p>
         <figure class="paper-figure teaser-figure">
-          <img src="assets/images/teaser_v2.png" alt="Comparison between direct LingBot-Map outputs and Map2SLAM, where persistent state improves global consistency." width="2103" height="706">
+          <picture>
+            <source srcset="assets/images/teaser_v2.webp" type="image/webp">
+            <img src="assets/images/teaser_v2.png" alt="Comparison between direct LingBot-Map outputs and Map2SLAM, where persistent state improves global consistency." width="2103" height="706" loading="eager" fetchpriority="high" decoding="async">
+          </picture>
         </figure>
       </div>
     </section>
@@ -78,7 +82,7 @@
       </div>
       <div class="engine-layout">
         <figure class="paper-figure method-figure">
-          <iframe class="schedule-animation" src="assets/animation/index.html?v=3a4cfb2a471d" title="Interactive Map2SLAM inference schedule" aria-describedby="schedule-caption" loading="lazy"></iframe>
+          <iframe class="schedule-animation" src="assets/animation/index.html?v=3a4cfb2a471d" title="Interactive Map2SLAM inference schedule" aria-describedby="schedule-caption" loading="eager"></iframe>
           <figcaption id="schedule-caption" class="animation-caption">Shown sequentially; the front end and back end run asynchronously.</figcaption>
         </figure>
         <div class="idea-motto">
@@ -95,7 +99,7 @@
       </div>
 
       <figure class="paper-figure full-bleed system-figure">
-        <img src="assets/images/pipeline_v2.png" alt="Map2SLAM system diagram with one front-end tracking path and two back-end paths for online trajectory correction and dense geometric refinement." width="2105" height="685">
+        <img src="assets/images/pipeline_v2.png" alt="Map2SLAM system diagram with one front-end tracking path and two back-end paths for online trajectory correction and dense geometric refinement." width="2105" height="685" loading="lazy" decoding="async">
         <figcaption>One Front-end Tracking path and two Back-end optimization paths reuse cached Frame Encoder outputs.</figcaption>
       </figure>
 
@@ -127,7 +131,7 @@
       </div>
 
       <figure class="paper-figure loop-figure">
-        <img src="assets/images/loop_check_v2.png" alt="Accepted and rejected loop candidates after appearance retrieval and geometric verification." width="2051" height="544">
+        <img src="assets/images/loop_check_v2.png" alt="Accepted and rejected loop candidates after appearance retrieval and geometric verification." width="2051" height="544" loading="lazy" decoding="async">
         <figcaption>Appearance proposes; fresh-context pairwise geometry decides.</figcaption>
       </figure>
     </section>
@@ -172,7 +176,7 @@
               </ul>
             </div>
             <div class="video-stage">
-              <video class="result-video" id="demo-video" controls playsinline preload="metadata" muted poster="assets/images/poster_final_kitti00.jpg">
+              <video class="result-video" id="demo-video" controls playsinline preload="none" muted poster="assets/images/poster_final_kitti00.jpg">
                 <source src="https://gw.alipayobjects.com/v/huamei_vaouhm/afts/video/JGMVQaipF30AAAAAgOAAAAgAfoeUAQBr" type="video/mp4">
               </video>
               <div class="scene-navigation" role="group" aria-label="Switch SLAM recording">
@@ -216,7 +220,7 @@
               </ul>
             </div>
             <div class="video-stage">
-              <video class="result-video" id="trajectory-video" controls playsinline preload="metadata" muted loop poster="assets/images/trajectory_final_kitti00.jpg">
+              <video class="result-video" id="trajectory-video" controls playsinline preload="none" muted loop poster="assets/images/trajectory_final_kitti00.jpg">
                 <source src="assets/videos/trajectory/kitti00.mp4" type="video/mp4">
               </video>
               <div class="scene-navigation" role="group" aria-label="Switch trajectory visualization">
@@ -261,7 +265,7 @@
           <p>We train a lightweight head to convert cached Frame Encoder features into global descriptors, keeping the encoder frozen. The 1.8M-parameter head adds 0.94 ms per descriptor and reaches 88.2 mean R@1 across MSLS-val, Pitts250k-test, and SPED.</p>
         </div>
         <figure class="paper-figure runtime-figure retrieval-figure">
-          <img src="assets/images/loop-retrieval.png" alt="Retrieval accuracy versus added latency; the cached-feature Map2SLAM head is highlighted." width="1415" height="850">
+          <img src="assets/images/loop-retrieval.png" alt="Retrieval accuracy versus added latency; the cached-feature Map2SLAM head is highlighted." width="1415" height="850" loading="lazy" decoding="async">
           <figcaption>Retrieval accuracy versus added latency.</figcaption>
         </figure>
       </div>
@@ -272,7 +276,7 @@
           <p>The system uses two NVIDIA RTX 5090D GPUs: one runs front-end tracking at over 28 FPS, while the other handles loop closure and bidirectional re-observation. Dense geometric refinement runs after the input sequence.</p>
         </div>
         <figure class="paper-figure runtime-figure">
-          <img src="assets/images/profile_v2.png" alt="Timeline of Map2SLAM front-end and back-end GPU activity and video memory usage." width="1361" height="671">
+          <img src="assets/images/profile_v2.png" alt="Timeline of Map2SLAM front-end and back-end GPU activity and video memory usage." width="1361" height="671" loading="lazy" decoding="async">
           <figcaption>GPU activity, accepted loops, and memory usage over a KITTI sequence.</figcaption>
         </figure>
       </div>
