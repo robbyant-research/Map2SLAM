@@ -90,9 +90,31 @@ function pauseAllVideos() {
   resultVideos.forEach((video) => video.pause());
 }
 
+function revealPoster(video) {
+  if (!video.dataset.poster) return;
+  video.poster = video.dataset.poster;
+  delete video.dataset.poster;
+}
+
+const posterObserver = "IntersectionObserver" in window
+  ? new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      revealPoster(entry.target);
+      posterObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: "400px 0px" })
+  : null;
+
 function replaceVideo(video, source, poster, playbackRate, autoplay) {
   video.pause();
-  video.poster = poster;
+  video.dataset.poster = poster;
+  if (autoplay || !posterObserver) {
+    revealPoster(video);
+    posterObserver?.unobserve(video);
+  } else {
+    posterObserver.observe(video);
+  }
   video.querySelector("source").src = source;
   video.load();
   video.defaultPlaybackRate = playbackRate;
