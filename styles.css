@@ -471,9 +471,10 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 680px) {
   :root { --pad: 1rem; }
-  html { scroll-padding-top: 0; }
-  .site-header { min-height: 3.5rem; }
-  .nav { display: none; }
+  html { scroll-padding-top: 4.5rem; }
+  .site-header { min-height: 3.5rem; column-gap: .75rem; }
+  .nav { display: flex; gap: .75rem; }
+  .nav a { padding: 1rem 0; font-size: .72rem; }
   .hero { padding-top: 2.25rem; }
   .hero h1 { margin-bottom: 1.75rem; }
   .authors { gap: .35rem 1rem; font-size: 1rem; }
