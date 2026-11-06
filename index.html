@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Project page for Map2SLAM: From Streaming Map Prediction to Real-Time SLAM.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Map2SLAM: From Streaming Map Prediction to Real-Time SLAM</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M12%2050V14L32%2034L52%2014V50%22%20fill%3D%22none%22%20stroke%3D%22%23111318%22%20stroke-width%3D%224.5%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M6%2044h12v12H6zM6%208h12v12H6zM26%2028h12v12H26zM46%208h12v12H46zM46%2044h12v12H46z%22%20fill%3D%22%23002fa7%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="stylesheet" href="styles.css?v=11f849126fb4">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="site-brand" href="#top">Map2SLAM</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#idea">Idea</a>
+      <a href="#system">System</a>
+      <a href="#demos">Demos</a>
+      <a href="#results">Results</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-grid" id="top">
+      <div class="hero-copy">
+        <h1>
+          <span class="project-name">Map2SLAM<span class="sr-only">: </span></span>
+          <span class="project-title">From Streaming Map Prediction <span class="title-phrase">to Real-Time SLAM</span></span>
+        </h1>
+        <div class="publication-info">
+          <p class="authors">
+            <span class="author"><a href="https://ygaojiany.github.io/" target="_blank" rel="noopener">Jian Gao</a><sup>1,2</sup></span>
+            <span class="author"><a href="https://linzhuo.xyz/" target="_blank" rel="noopener">Lin-Zhuo Chen</a><sup>1,2</sup></span>
+            <span class="author"><a href="https://sh17c.top/" target="_blank" rel="noopener">Yihang Chen</a><sup>3,2</sup></span>
+            <span class="author"><a href="https://scholar.google.com/citations?user=ll9g3BkAAAAJ" target="_blank" rel="noopener">Jiagang Chen</a><sup>4,2</sup></span>
+            <span class="author"><a href="https://dongjiacheng06.github.io/" target="_blank" rel="noopener">Jiacheng Dong</a><sup>5,2</sup></span>
+            <span class="author"><a href="https://cite.nju.edu.cn/People/Faculty/20190621/i5054.html" target="_blank" rel="noopener">Xun Cao</a><sup>1</sup></span>
+            <span class="author"><a href="https://xuenan.net/" target="_blank" rel="noopener">Nan Xue</a><sup>2</sup></span>
+            <span class="author"><a href="https://justimyhxu.github.io/" target="_blank" rel="noopener">Yinghao Xu</a><sup>3</sup><svg class="corresponding-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Corresponding author"><title>Corresponding author</title><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span>
+            <span class="author"><a href="https://yoyo000.github.io/" target="_blank" rel="noopener">Yao Yao</a><sup>1</sup><svg class="corresponding-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Corresponding author"><title>Corresponding author</title><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span>
+          </p>
+          <p class="affiliations">
+            <span><sup>1</sup> Nanjing University</span>
+            <span><sup>2</sup> Robbyant, Ant Group</span>
+            <span><sup>3</sup> HKUST</span>
+            <span><sup>4</sup> Wuhan University</span>
+            <span><sup>5</sup> Zhejiang University</span>
+          </p>
+          <nav class="publication-links" aria-label="Paper resources">
+            <a class="paper-link" href="assets/papers/Map2SLAM.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8 12h8M8 16h6"/></svg>
+              <span>Paper</span>
+            </a>
+            <a class="text-link" href="https://github.com/robbyant-research/Map2SLAM" target="_blank" rel="noopener" title="Code will be released here">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7-5 5 5 5m10-10 5 5-5 5M14 4l-4 16"/></svg>
+              <span>Code</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="hero-overview">
+        <p class="hero-statement"><span class="tldr-label">TL;DR</span> Map2SLAM uses a frozen streaming 3D foundation model as a <strong>geometry engine</strong>, scheduling its causal and bidirectional inference to maintain a <strong>persistent, revisable SLAM state</strong>.</p>
+        <figure class="paper-figure teaser-figure">
+          <img src="assets/images/teaser_v2.png" alt="Comparison between direct LingBot-Map outputs and Map2SLAM, where persistent state improves global consistency." width="2103" height="706">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-grid content-section idea-section" id="idea">
+      <div class="idea-heading">
+        <h2>From Map to SLAM</h2>
+      </div>
+      <div class="section-intro approach-copy wide">
+        <p>Map2SLAM keeps LingBot-Map frozen and shares Cached Frame Features across its operations. <strong>Initialization</strong> uses a <strong class="inference-mode">Bidirectional Prefix</strong> to establish the Live Context; <strong>Tracking</strong> then follows incoming frames through <strong class="inference-mode">Causal Continuation</strong>, extending the persistent trajectory.</p>
+        <p>The back end runs <strong class="inference-mode">Bidirectional Prefix</strong> in a Fresh Context using the cached frame features. <strong>Loop-Pair Geometry</strong> verifies loop candidates and supplies constraints for online trajectory correction. Joint inference over overlapping segments supplies observations for <strong>Dense Optimization</strong>, which jointly refines keyframe poses and depths after the sequence.</p>
+      </div>
+      <div class="engine-layout">
+        <figure class="paper-figure method-figure">
+          <iframe class="schedule-animation" src="assets/animation/index.html?v=3a4cfb2a471d" title="Interactive Map2SLAM inference schedule" aria-describedby="schedule-caption" loading="lazy"></iframe>
+          <figcaption id="schedule-caption" class="animation-caption">Shown sequentially; the front end and back end run asynchronously.</figcaption>
+        </figure>
+        <div class="idea-motto">
+          <p><span>A strong</span> <strong>model matters.</strong></p>
+          <p><span>So does</span> <strong>how we use it.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-grid content-section system-section" id="system">
+      <div class="section-intro wide">
+        <h2>Method</h2>
+        <p>Map2SLAM has one Front-end Tracking path and two Back-end optimization paths. The Front-end produces sequential observations online. Both Back-end paths use fresh Bidirectional Prefix inference on selected historical keyframes to obtain geometric observations. Online Trajectory Correction revises the trajectory during tracking, while Dense Geometric Refinement jointly refines keyframe poses and depths after the sequence.</p>
+      </div>
+
+      <figure class="paper-figure full-bleed system-figure">
+        <img src="assets/images/pipeline_v2.png" alt="Map2SLAM system diagram with one front-end tracking path and two back-end paths for online trajectory correction and dense geometric refinement." width="2105" height="685">
+        <figcaption>One Front-end Tracking path and two Back-end optimization paths reuse cached Frame Encoder outputs.</figcaption>
+      </figure>
+
+      <div class="system-steps">
+        <article class="frontend-path">
+          <h3>
+            <span class="stage-label">Front-end:</span>
+            <span class="stage-title">Tracking</span>
+          </h3>
+          <p class="stage-sequence">Bidirectional Prefix · Causal Continuation · Keyframe Probe</p>
+          <p>Bounded tracking windows stabilize local motion estimates. Each probe yields pose, depth, and intrinsics; accepted probes commit their KV updates and provide sequential observations, while rejected probes roll back without replay.</p>
+        </article>
+        <article class="backend-path">
+          <h3>
+            <span class="stage-label">Back-end:</span>
+            <span class="stage-title">Online Trajectory Correction</span>
+          </h3>
+          <p class="stage-sequence">Loop Retrieval · Pairwise Geometry · iPGO</p>
+          <p>A trained lightweight head maps cached Frame Encoder features to global keyframe descriptors. Descriptor similarity proposes loop candidates; fresh two-view Bidirectional Prefix verifies geometry, and iPGO corrects the trajectory during tracking.</p>
+        </article>
+        <article class="backend-path">
+          <h3>
+            <span class="stage-label">Back-end:</span>
+            <span class="stage-title">Dense Geometric Refinement</span>
+          </h3>
+          <p class="stage-sequence">Segment Scheduling · Segment Geometry · Dense Optimization</p>
+          <p>Sequential and loop segments select historical keyframes, fresh multi-view Bidirectional Prefix inference provides segment observations, and final pose–depth optimization jointly refines keyframe poses and depths.</p>
+        </article>
+      </div>
+
+      <figure class="paper-figure loop-figure">
+        <img src="assets/images/loop_check_v2.png" alt="Accepted and rejected loop candidates after appearance retrieval and geometric verification." width="2051" height="544">
+        <figcaption>Appearance proposes; fresh-context pairwise geometry decides.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section-grid demo-section" id="demos" aria-label="Demos">
+      <section class="media-block" id="slam-recordings" aria-labelledby="demo-heading">
+        <div class="media-heading">
+          <h2 id="demo-heading">SLAM Recordings</h2>
+          <div class="media-controls">
+            <label class="speed-control" for="demo-speed">
+              <span>Playback speed</span>
+              <select id="demo-speed" aria-label="SLAM recording playback speed">
+                <option value="1">1×</option>
+                <option value="2" selected>2×</option>
+                <option value="5">5×</option>
+                <option value="10">10×</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="media-browser">
+          <aside class="sequence-sidebar" aria-label="SLAM recording sequences">
+            <div class="sequence-list" role="group" aria-label="Select a sequence">
+              <button class="sequence-button demo-sequence-button is-active" type="button" data-id="kitti00" aria-pressed="true"><span>KITTI</span><strong>Sequence 00</strong></button>
+              <button class="sequence-button demo-sequence-button" type="button" data-id="kitti02" aria-pressed="false"><span>KITTI</span><strong>Sequence 02</strong></button>
+              <button class="sequence-button demo-sequence-button" type="button" data-id="kitti05" aria-pressed="false"><span>KITTI</span><strong>Sequence 05</strong></button>
+              <button class="sequence-button demo-sequence-button" type="button" data-id="vbr_campus_train0" aria-pressed="false"><span>VBR</span><strong>Campus-0</strong></button>
+              <button class="sequence-button demo-sequence-button" type="button" data-id="vbr_ciampino_train1" aria-pressed="false"><span>VBR</span><strong>Ciampino-1</strong></button>
+              <button class="sequence-button demo-sequence-button" type="button" data-id="vg02" aria-pressed="false"><span>Game captures</span><strong>GTA-V 1</strong></button>
+              <button class="sequence-button demo-sequence-button" type="button" data-id="vg03" aria-pressed="false"><span>Game captures</span><strong>GTA-V 2</strong></button>
+              <button class="sequence-button demo-sequence-button" type="button" data-id="vg04" aria-pressed="false"><span>Game captures</span><strong>Assassin's Creed</strong></button>
+            </div>
+          </aside>
+          <div class="media-player">
+            <div class="scene-details">
+              <ul class="scene-stats" id="demo-scene-stats" aria-live="polite">
+                <li>4,541 frames</li>
+                <li>3.70 km</li>
+              </ul>
+              <ul class="scene-features" id="demo-scene-features" aria-live="polite">
+                <li>Frequent loop closures</li>
+              </ul>
+            </div>
+            <div class="video-stage">
+              <video class="result-video" id="demo-video" controls playsinline preload="metadata" muted poster="assets/images/poster_final_kitti00.jpg">
+                <source src="https://gw.alipayobjects.com/v/huamei_vaouhm/afts/video/JGMVQaipF30AAAAAgOAAAAgAfoeUAQBr" type="video/mp4">
+              </video>
+              <div class="scene-navigation" role="group" aria-label="Switch SLAM recording">
+                <button class="scene-arrow" id="demo-prev" aria-controls="demo-video" type="button" aria-label="Previous SLAM recording" title="Previous SLAM recording">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg>
+                </button>
+                <button class="scene-arrow" id="demo-next" aria-controls="demo-video" type="button" aria-label="Next SLAM recording" title="Next SLAM recording">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="media-block" id="trajectory-comparisons" aria-labelledby="trajectory-heading">
+        <div class="media-heading">
+          <h2 id="trajectory-heading">Trajectory Visualizations</h2>
+        </div>
+        <div class="media-browser">
+          <aside class="sequence-sidebar" aria-label="Trajectory visualization sequences">
+            <div class="sequence-list" role="group" aria-label="Select a sequence">
+              <button class="sequence-button trajectory-sequence-button is-active" type="button" data-id="kitti00" aria-pressed="true"><span>KITTI</span><strong>Sequence 00</strong></button>
+              <button class="sequence-button trajectory-sequence-button" type="button" data-id="kitti02" aria-pressed="false"><span>KITTI</span><strong>Sequence 02</strong></button>
+              <button class="sequence-button trajectory-sequence-button" type="button" data-id="kitti05" aria-pressed="false"><span>KITTI</span><strong>Sequence 05</strong></button>
+              <button class="sequence-button trajectory-sequence-button" type="button" data-id="vbr_campus_train0" aria-pressed="false"><span>VBR</span><strong>Campus-0</strong></button>
+              <button class="sequence-button trajectory-sequence-button" type="button" data-id="vbr_ciampino_train1" aria-pressed="false"><span>VBR</span><strong>Ciampino-1</strong></button>
+              <button class="sequence-button trajectory-sequence-button" type="button" data-id="vg02" aria-pressed="false"><span>Game captures</span><strong>GTA-V 1</strong></button>
+              <button class="sequence-button trajectory-sequence-button" type="button" data-id="vg03" aria-pressed="false"><span>Game captures</span><strong>GTA-V 2</strong></button>
+              <button class="sequence-button trajectory-sequence-button" type="button" data-id="vg04" aria-pressed="false"><span>Game captures</span><strong>Assassin's Creed</strong></button>
+            </div>
+          </aside>
+          <div class="media-player">
+            <div class="scene-details">
+              <ul class="scene-stats" id="trajectory-scene-stats" aria-live="polite">
+                <li>4,541 frames</li>
+                <li>3.70 km</li>
+              </ul>
+              <ul class="scene-features" id="trajectory-scene-features" aria-live="polite">
+                <li>Frequent loop closures</li>
+              </ul>
+            </div>
+            <div class="video-stage">
+              <video class="result-video" id="trajectory-video" controls playsinline preload="metadata" muted loop poster="assets/images/trajectory_final_kitti00.jpg">
+                <source src="assets/videos/trajectory/kitti00.mp4" type="video/mp4">
+              </video>
+              <div class="scene-navigation" role="group" aria-label="Switch trajectory visualization">
+                <button class="scene-arrow" id="trajectory-prev" aria-controls="trajectory-video" type="button" aria-label="Previous trajectory visualization" title="Previous trajectory visualization">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg>
+                </button>
+                <button class="scene-arrow" id="trajectory-next" aria-controls="trajectory-video" type="button" aria-label="Next trajectory visualization" title="Next trajectory visualization">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="media-note" id="comparison-note">Normalized timeline used only for trajectory inspection. While tracking continues, Map2SLAM (Ours) <strong class="async-highlight">asynchronously corrects</strong> the trajectory using Incremental Pose Graph Optimization&nbsp;(iPGO).</p>
+      </section>
+    </section>
+
+    <section class="section-grid content-section results-section" id="results">
+      <div class="section-intro">
+        <h2>Accuracy &amp; Efficiency</h2>
+        <p>Mean absolute trajectory error after global Sim(3) alignment for uncalibrated methods. Lower is better.</p>
+      </div>
+
+      <div class="results-table-wrap">
+        <table class="results-table">
+          <thead><tr><th>Method</th><th>KITTI</th><th>VBR</th><th>Oxford Spires</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">LoGeR</th><td>25.43</td><td>36.18</td><td>6.88</td></tr>
+            <tr><th scope="row">LingBot-Map (S)</th><td>26.30</td><td>26.71</td><td>8.14</td></tr>
+            <tr><th scope="row">LingBot-Map (W)</th><td>35.54</td><td>77.22</td><td>15.93</td></tr>
+            <tr><th scope="row">HorizonStream</th><td>17.91</td><td>18.18</td><td>15.66</td></tr>
+            <tr><th scope="row">ABot-Recon</th><td>13.56</td><td>9.97</td><td>5.36</td></tr>
+            <tr class="ours-row"><th scope="row">Ours</th><td><strong>7.56</strong></td><td><strong>5.15</strong></td><td><strong>3.07</strong></td></tr>
+          </tbody>
+        </table>
+        <p class="results-table-note">Mean ATE(m) over 11 KITTI, 7 VBR, and 10 Oxford Spires sequences. Full per-sequence results and calibrated baselines are reported in the manuscript.</p>
+      </div>
+
+      <div class="runtime-block">
+        <div class="runtime-copy">
+          <h3>Cached-feature loop retrieval</h3>
+          <p>We train a lightweight head to convert cached Frame Encoder features into global descriptors, keeping the encoder frozen. The 1.8M-parameter head adds 0.94 ms per descriptor and reaches 88.2 mean R@1 across MSLS-val, Pitts250k-test, and SPED.</p>
+        </div>
+        <figure class="paper-figure runtime-figure retrieval-figure">
+          <img src="assets/images/loop-retrieval.png" alt="Retrieval accuracy versus added latency; the cached-feature Map2SLAM head is highlighted." width="1415" height="850">
+          <figcaption>Retrieval accuracy versus added latency.</figcaption>
+        </figure>
+      </div>
+
+      <div class="runtime-block runtime-profile-block">
+        <div class="runtime-copy">
+          <h3>Runtime profile</h3>
+          <p>The system uses two NVIDIA RTX 5090D GPUs: one runs front-end tracking at over 28 FPS, while the other handles loop closure and bidirectional re-observation. Dense geometric refinement runs after the input sequence.</p>
+        </div>
+        <figure class="paper-figure runtime-figure">
+          <img src="assets/images/profile_v2.png" alt="Timeline of Map2SLAM front-end and back-end GPU activity and video memory usage." width="1361" height="671">
+          <figcaption>GPU activity, accepted loops, and memory usage over a KITTI sequence.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Map2SLAM: From Streaming Map Prediction to Real-Time SLAM</p>
+  </footer>
+
+  <script src="script.js?v=9081198883cb"></script>
+</body>
+</html>

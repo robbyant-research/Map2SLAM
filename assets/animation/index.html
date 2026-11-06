@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map2SLAM — Inference scheduling</title><link rel="stylesheet" href="style.css?v=ec1a6b890d70">
+</head>
+<body class="embedded"><main>
+<section aria-label="Interactive inference schematic">
+<div class="diagram-scroll" tabindex="0" aria-label="Inference schematic; scroll horizontally on small screens">
+<svg id="diagram" viewBox="0 0 1120 490" role="group" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Map2SLAM inference schedule</title>
+<desc id="diagram-description">Eight cached frame features support causal tracking, fresh historical pair and segment queries, and a persistent trajectory. Context positions are fixed. White cells show permitted attention.</desc>
+</svg></div>
+<div class="controls">
+<button id="play" class="primary" aria-label="Play animation" title="Play animation"><svg viewBox="0 0 20 20" aria-hidden="true"><path id="play-icon" d="M6 3 16 10 6 17Z"/></svg><span id="play-label">Play animation</span></button>
+<button id="replay" aria-label="Replay animation"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 6a7 7 0 1 1-1 7M4 1v5h5"/></svg></button>
+<label class="timeline"><span class="sr-only">Animation progress</span><input id="progress" type="range" min="0" max="26.8" step="0.1" value="0"></label><output id="time">0:00 / 0:26</output>
+</div>
+</section></main><script src="app.js?v=85a83d204465"></script></body></html>
