@@ -2,6 +2,6 @@
 
 Map2SLAM: From Streaming Map Prediction to Real-Time SLAM.
 
-[Project Page](https://robbyant-research.github.io/Map2SLAM/) | [Paper](https://robbyant-research.github.io/Map2SLAM/assets/papers/Map2SLAM.pdf)
+[Project Page](https://robbyant-research.github.io/Map2SLAM/) | [arXiv](https://arxiv.org/abs/2611.11169)
 
 Code will be released here.
